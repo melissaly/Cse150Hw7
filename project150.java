@@ -51,7 +51,8 @@ public class project150{
         }
     }
 
-    public static void main(String[] args) throws FileNotFoundException{
+    public static void fillData() throws FileNotFoundException{
+
         fillMonths();
         fillDates();
 
@@ -202,8 +203,12 @@ public class project150{
             }
         }
 
-        
 
+    }
+
+    public static void main(String[] args) throws FileNotFoundException{
+
+        fillData();
 
         
     }
