@@ -54,7 +54,7 @@ public class project150{
         }
     }
 
-    public static initializepi() {
+    public static void initializepi() {
         for(int i = 0; i < numFactors; i++) {
             if(i == 0 || i == 4 || i == 6 || i == 7 || i == 8 || i == 9 ) {
                 pi[i] = 0.5;
@@ -208,7 +208,7 @@ public class project150{
         sc.close();
         index = 0;
 
-        intializepi();
+        initializepi();
 
         for(int i = 0; i < numMonths - 1; i++) {
             if(djia[i] < djia[i+1]) {
