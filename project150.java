@@ -5,26 +5,29 @@ import java.lang.*;
 public class project150{
 
     public static final int numMonths = 179;
+    public static final int numFactors = 14;
 
     public static String[] dates = new String[numMonths];
     public static String[] months = new String[12];
 
-    public static int[] a401k = new int[numMonths];
-    public static int[] coupons = new int[numMonths];
-    public static int[] discounts = new int[numMonths];
-    public static int[] inflation = new int[numMonths];
-    public static int[] investing = new int[numMonths];
-    public static int[] loans = new int[numMonths];
-    public static int[] mercedes = new int[numMonths];
-    public static int[] mortgage = new int[numMonths];
-    public static int[] real_estate = new int[numMonths];
-    public static int[] stock_market = new int[numMonths];
-    public static int[] student_loans = new int[numMonths];
-    public static int[] unemployment = new int[numMonths];
-    public static int[] value_of_us_dollar = new int[numMonths];
-    public static int[] welfare = new int[numMonths];
+    public static double[] a401k = new double[numMonths];
+    public static double[] coupons = new double[numMonths];
+    public static double[] discounts = new double[numMonths];
+    public static double[] inflation = new double[numMonths];
+    public static double[] investing = new double[numMonths];
+    public static double[] loans = new double[numMonths];
+    public static double[] mercedes = new double[numMonths];
+    public static double[] mortgage = new double[numMonths];
+    public static double[] real_estate = new double[numMonths];
+    public static double[] stock_market = new double[numMonths];
+    public static double[] student_loans = new double[numMonths];
+    public static double[] unemployment = new double[numMonths];
+    public static double[] value_of_us_dollar = new double[numMonths];
+    public static double[] welfare = new double[numMonths];
     public static double[] djia = new double[numMonths];
     public static int[] djiaChange = new int[numMonths - 1];
+
+    public static double[] pi = new double[numFactors];
 
     public static void fillMonths() {
         months[0] = "January";
@@ -47,6 +50,17 @@ public class project150{
             dates[i] = months[i % 12] + " " + year;
             if(((i+1) % 12) == 0) {
                 year++;
+            }
+        }
+    }
+
+    public static initializepi() {
+        for(int i = 0; i < numFactors; i++) {
+            if(i == 0 || i == 4 || i == 6 || i == 7 || i == 8 || i == 9 ) {
+                pi[i] = 0.5;
+            }
+            else {
+                pi[i] = -0.5;
             }
         }
     }
@@ -76,7 +90,7 @@ public class project150{
         int index = 0;
         sc = new Scanner(file401k);
         while(sc.hasNextInt()) {
-            a401k[index] = sc.nextInt();
+            a401k[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -84,7 +98,7 @@ public class project150{
 
         sc = new Scanner(fileCoupons);
         while(sc.hasNextInt()) {
-            coupons[index] = sc.nextInt();
+            coupons[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -92,7 +106,7 @@ public class project150{
 
         sc = new Scanner(fileDiscounts);
         while(sc.hasNextInt()) {
-            discounts[index] = sc.nextInt();
+            discounts[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -100,7 +114,7 @@ public class project150{
 
         sc = new Scanner(fileInflation);
         while(sc.hasNextInt()) {
-            inflation[index] = sc.nextInt();
+            inflation[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -108,7 +122,7 @@ public class project150{
 
         sc = new Scanner(fileInvesting);
         while(sc.hasNextInt()) {
-            investing[index] = sc.nextInt();
+            investing[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -116,7 +130,7 @@ public class project150{
 
         sc = new Scanner(fileLoans);
         while(sc.hasNextInt()) {
-            loans[index] = sc.nextInt();
+            loans[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -124,7 +138,7 @@ public class project150{
 
         sc = new Scanner(fileMercedes);
         while(sc.hasNextInt()) {
-            mercedes[index] = sc.nextInt();
+            mercedes[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -132,7 +146,7 @@ public class project150{
 
         sc = new Scanner(fileMortgage);
         while(sc.hasNextInt()) {
-            mortgage[index] = sc.nextInt();
+            mortgage[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -140,7 +154,7 @@ public class project150{
 
         sc = new Scanner(fileRealEstate);
         while(sc.hasNextInt()) {
-            real_estate[index] = sc.nextInt();
+            real_estate[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -148,7 +162,7 @@ public class project150{
 
         sc = new Scanner(fileStockMarket);
         while(sc.hasNextInt()) {
-            stock_market[index] = sc.nextInt();
+            stock_market[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -156,7 +170,7 @@ public class project150{
 
         sc = new Scanner(fileStudentLoans);
         while(sc.hasNextInt()) {
-            student_loans[index] = sc.nextInt();
+            student_loans[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -164,7 +178,7 @@ public class project150{
 
         sc = new Scanner(fileUnemployment);
         while(sc.hasNextInt()) {
-            unemployment[index] = sc.nextInt();
+            unemployment[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -172,7 +186,7 @@ public class project150{
 
         sc = new Scanner(fileValueUSDollar);
         while(sc.hasNextInt()) {
-            value_of_us_dollar[index] = sc.nextInt();
+            value_of_us_dollar[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -180,7 +194,7 @@ public class project150{
 
         sc = new Scanner(fileWelfare);
         while(sc.hasNextInt()) {
-            welfare[index] = sc.nextInt();
+            welfare[index] = sc.nextInt() / 100;
             index++;
         }
         sc.close();
@@ -193,6 +207,8 @@ public class project150{
         }
         sc.close();
         index = 0;
+
+        intializepi();
 
         for(int i = 0; i < numMonths - 1; i++) {
             if(djia[i] < djia[i+1]) {
