@@ -90,7 +90,7 @@ public class project150{
         int index = 0;
         sc = new Scanner(file401k);
         while(sc.hasNextInt()) {
-            a401k[index] = sc.nextInt() / 100;
+            a401k[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -98,7 +98,7 @@ public class project150{
 
         sc = new Scanner(fileCoupons);
         while(sc.hasNextInt()) {
-            coupons[index] = sc.nextInt() / 100;
+            coupons[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -106,7 +106,7 @@ public class project150{
 
         sc = new Scanner(fileDiscounts);
         while(sc.hasNextInt()) {
-            discounts[index] = sc.nextInt() / 100;
+            discounts[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -114,7 +114,7 @@ public class project150{
 
         sc = new Scanner(fileInflation);
         while(sc.hasNextInt()) {
-            inflation[index] = sc.nextInt() / 100;
+            inflation[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -122,7 +122,7 @@ public class project150{
 
         sc = new Scanner(fileInvesting);
         while(sc.hasNextInt()) {
-            investing[index] = sc.nextInt() / 100;
+            investing[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -130,7 +130,7 @@ public class project150{
 
         sc = new Scanner(fileLoans);
         while(sc.hasNextInt()) {
-            loans[index] = sc.nextInt() / 100;
+            loans[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -138,7 +138,7 @@ public class project150{
 
         sc = new Scanner(fileMercedes);
         while(sc.hasNextInt()) {
-            mercedes[index] = sc.nextInt() / 100;
+            mercedes[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -146,7 +146,7 @@ public class project150{
 
         sc = new Scanner(fileMortgage);
         while(sc.hasNextInt()) {
-            mortgage[index] = sc.nextInt() / 100;
+            mortgage[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -154,7 +154,7 @@ public class project150{
 
         sc = new Scanner(fileRealEstate);
         while(sc.hasNextInt()) {
-            real_estate[index] = sc.nextInt() / 100;
+            real_estate[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -162,7 +162,7 @@ public class project150{
 
         sc = new Scanner(fileStockMarket);
         while(sc.hasNextInt()) {
-            stock_market[index] = sc.nextInt() / 100;
+            stock_market[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -170,7 +170,7 @@ public class project150{
 
         sc = new Scanner(fileStudentLoans);
         while(sc.hasNextInt()) {
-            student_loans[index] = sc.nextInt() / 100;
+            student_loans[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -178,7 +178,7 @@ public class project150{
 
         sc = new Scanner(fileUnemployment);
         while(sc.hasNextInt()) {
-            unemployment[index] = sc.nextInt() / 100;
+            unemployment[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -186,7 +186,7 @@ public class project150{
 
         sc = new Scanner(fileValueUSDollar);
         while(sc.hasNextInt()) {
-            value_of_us_dollar[index] = sc.nextInt() / 100;
+            value_of_us_dollar[index] = sc.nextInt();
             index++;
         }
         sc.close();
@@ -194,7 +194,7 @@ public class project150{
 
         sc = new Scanner(fileWelfare);
         while(sc.hasNextInt()) {
-            welfare[index] = sc.nextInt() / 100;
+            welfare[index] = sc.nextInt();
             index++;
         }
         sc.close();
