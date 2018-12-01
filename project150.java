@@ -249,7 +249,7 @@ public class project150{
             }
         }
 
-        int y = {0, djiaChange};
+        int[] y = {0, djiaChange};
         
 		// 512 iterations training (arbitrary number)
 		for (int k = 0; k<513; k++) {
@@ -308,7 +308,7 @@ public class project150{
 		} // end of all iterations
 		System.out.println("\n");
 		for (int b = 0; b < 23; b++) {
-			System.out.println((b+1) + "\t" + p[b]);
+			System.out.println((b+1) + "\t" + pi[b]);
 		}
     }
 
