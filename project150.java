@@ -270,6 +270,9 @@ public class project150{
 				for (int n = 0; n < numFactors; n++) {
 					// product = (1-pi)^x
 					product *= Math.pow(1-pi[n], x[t][n]); 
+                    if (Double.isNaN(product)) {
+                        System.out.println("pi = " + pi[n]);
+                    }
 					// it also contributes to Ti
 					Ti[n]++;
 
