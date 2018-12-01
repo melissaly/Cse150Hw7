@@ -250,7 +250,8 @@ public class project150{
             }
         }
 
-        int[] y = ArrayUtils.addAll({0}, djiaChange);
+        int[] zero = {0};
+        int[] y = ArrayUtils.addAll(zero, djiaChange);
         
 		// 512 iterations training (arbitrary number)
 		for (int k = 0; k<513; k++) {
