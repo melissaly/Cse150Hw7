@@ -297,12 +297,12 @@ public class project150{
 					likelihood += Math.log(prob);
 			} // end of single sample
 			// update all the p's
-			for (int a = 0; a < 23; a++) {
+			for (int a = 0; a < numFactors; a++) {
 				newPies[a] /= Ti[a];
 			}
 			pi = newPies;
 			
-			likelihood /= 267;
+			likelihood /= numMonths;
 			
 			for (int b = 0; b < 10; b++) {
 				if (k == (Math.pow(2, b))) {
