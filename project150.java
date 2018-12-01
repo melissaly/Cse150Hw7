@@ -27,6 +27,7 @@ public class project150{
     public static double[] djia = new double[numMonths];
     public static int[] djiaChange = new int[numMonths - 1];
 
+    public static double[][] data = new double[numMonths][numFactors];
     public static double[] pi = new double[numFactors];
 
     public static void fillMonths() {
@@ -219,12 +220,102 @@ public class project150{
             }
         }
 
+        for (int i = 0; i < numMonths; i++) {
+            data[i][0] = a401k[i];
+            data[i][1] = coupons[i];
+            data[i][2] = discounts[i];
+            data[i][3] = inflation[i];
+            data[i][4] = investing[i];
+            data[i][5] = loans[i];
+            data[i][6] = mercedes[i];
+            data[i][7] = mortgage[i];
+            data[i][8] = real_estate[i];
+            data[i][9] = stock_market[i];
+            data[i][10] = student_loans[i];
+            data[i][11] = unemployment[i];
+            data[i][12] = value_of_us_dollar[i];
+            data[i][13] = welfare[i];
+        }
 
+    }
+
+    private void attempt2() {
+        // turn all indeces into 50/x in order to put them between 0 and 2
+        // so lower indeces reduce pi value
+        double[][] x = data;
+        for (int i = 0; i < numFactors; i++) {
+            for (int j = 0; j < numMonths; j++) {
+                x[j][i] = 50/x[j][i];
+            }
+        }
+        
+		// 512 iterations training (arbitrary number)
+		for (int k = 0; k<513; k++) {
+			int mistakes = 0;
+			double likelihood = 0;
+			int[] Ti = new int[numFactors]; // java inits to zero
+			double[] newPies = new double[numFactors];
+			
+			// T=179 samples of data 
+			for (int t = 0; t < numMonths; t++) {
+				// P(Y=1|X=x) = 1- product (1-pi)^xi
+				double product = 1;
+				// 23 X and Z nodes
+				for (int n = 0; n < 23; n++) {
+					// if x is on, it contributes to the product
+					if (x[t][n] == 1) {
+						product *= (1-p[n]); 
+						// it also contributes to Ti
+						Ti[n]++;
+					}
+
+				} // end of iterting through all X nodes
+				
+				double prob = 1-product;
+				for (int n = 0; n < 23; n++) {
+					newPies[n] += y[t]*x[t][n]*p[n] / prob;
+				}
+
+				if (y[t] == 0) {
+					if (prob >= 0.5)
+						mistakes++;
+				}
+				if (y[t] == 1) {
+					if (prob < 0.5) {
+						mistakes++;
+					}
+				}
+				
+				// likelihood to add = logP(Y=yt|X=xt)
+				if (y[t] == 0) 
+					likelihood += Math.log(product);
+				else
+					likelihood += Math.log(prob);
+			} // end of single sample
+			// update all the p's
+			for (int a = 0; a < 23; a++) {
+				newPies[a] /= Ti[a];
+			}
+			p = newPies;
+			
+			likelihood /= 267;
+			
+			for (int b = 0; b < 10; b++) {
+				if (k == (Math.pow(2, b))) {
+					System.out.println(k + "\t" + mistakes + "\t" + likelihood);
+				}
+			}
+		} // end of all iterations
+		System.out.println("\n");
+		for (int b = 0; b < 23; b++) {
+			System.out.println((b+1) + "\t" + p[b]);
+		}
     }
 
     public static void main(String[] args) throws FileNotFoundException{
 
         fillData();
+        attempt2();
 
         
     }
