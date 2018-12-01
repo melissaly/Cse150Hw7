@@ -311,7 +311,7 @@ public class project150{
 			}
 		} // end of all iterations
 		System.out.println("\n");
-		for (int b = 0; b < 23; b++) {
+		for (int b = 0; b < numFactors; b++) {
 			System.out.println((b+1) + "\t" + pi[b]);
 		}
     }
