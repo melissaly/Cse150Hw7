@@ -260,19 +260,17 @@ public class project150{
 			for (int t = 0; t < numMonths; t++) {
 				// P(Y=1|X=x) = 1- product (1-pi)^xi
 				double product = 1;
-				// 23 X and Z nodes
-				for (int n = 0; n < 23; n++) {
-					// if x is on, it contributes to the product
-					if (x[t][n] == 1) {
-						product *= (1-p[n]); 
-						// it also contributes to Ti
-						Ti[n]++;
-					}
+				// 14 X and Z nodes
+				for (int n = 0; n < numFactors; n++) {
+					// product = (1-pi)^x
+					product *= Math.pow(1-pi[n], x[t][n]); 
+					// it also contributes to Ti
+					Ti[n]++;
 
 				} // end of iterting through all X nodes
 				
 				double prob = 1-product;
-				for (int n = 0; n < 23; n++) {
+				for (int n = 0; n < numFactors; n++) {
 					newPies[n] += y[t]*x[t][n]*p[n] / prob;
 				}
 
@@ -296,7 +294,7 @@ public class project150{
 			for (int a = 0; a < 23; a++) {
 				newPies[a] /= Ti[a];
 			}
-			p = newPies;
+			pi = newPies;
 			
 			likelihood /= 267;
 			
