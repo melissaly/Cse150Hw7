@@ -248,6 +248,8 @@ public class project150{
                 x[j][i] = 50/x[j][i];
             }
         }
+
+        int y = {0, djiaChange};
         
 		// 512 iterations training (arbitrary number)
 		for (int k = 0; k<513; k++) {
@@ -271,7 +273,7 @@ public class project150{
 				
 				double prob = 1-product;
 				for (int n = 0; n < numFactors; n++) {
-					newPies[n] += y[t]*x[t][n]*p[n] / prob;
+					newPies[n] += y[t]*x[t][n]*pi[n] / prob;
 				}
 
 				if (y[t] == 0) {
