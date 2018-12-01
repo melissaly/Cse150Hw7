@@ -249,7 +249,7 @@ public class project150{
             }
         }
 
-        int[] y = {0, djiaChange};
+        int[] y = {0} + djiaChange;
         
 		// 512 iterations training (arbitrary number)
 		for (int k = 0; k<513; k++) {
