@@ -1,7 +1,6 @@
 import java.util.*;
 import java.io.*;
 import java.lang.*;
-import org.apache.commons.lang.ArrayUtils;
 
 public class project150{
 
@@ -240,7 +239,7 @@ public class project150{
 
     }
 
-    private void attempt2() {
+    private static void attempt2() {
         // turn all indeces into 50/x in order to put them between 0 and 2
         // so lower indeces reduce pi value
         double[][] x = data;
@@ -250,8 +249,11 @@ public class project150{
             }
         }
 
-        int[] zero = {0};
-        int[] y = ArrayUtils.addAll(zero, djiaChange);
+        int[] y = new int[numMonths];
+        y[0] = 0;
+        for (int i = 1; i < numMonths; i++) {
+            y[i] = djiaChange[i-1];
+        }
         
 		// 512 iterations training (arbitrary number)
 		for (int k = 0; k<513; k++) {
