@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.*;
 import java.lang.*;
+import org.apache.commons.lang.ArrayUtils;
 
 public class project150{
 
@@ -249,7 +250,7 @@ public class project150{
             }
         }
 
-        int[] y = {0} + djiaChange;
+        int[] y = ArrayUtils.addAll({0}, djiaChange);
         
 		// 512 iterations training (arbitrary number)
 		for (int k = 0; k<513; k++) {
